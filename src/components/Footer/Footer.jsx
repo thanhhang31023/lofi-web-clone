@@ -14,38 +14,27 @@ const Footer = () => {
 
   return (
     <div className='footer'>
-      <div className='author'>
-        
-        {moodMode === 'chill' ? (
-          <span>Song name: {chill[currentSongIndex].name}</span>
-        ) : moodMode === 'jazzy' ? (
-          <span>Song name: {jazzy[currentSongIndex].name}</span>
-        ) : (
-          <span>Song name: {sleep[currentSongIndex].name}</span>
-        )}
-      </div>
-      <div className='controller'>
-        {moodMode === 'chill' ? (
-          <Player
-            currentSongIndex={currentSongIndex}
-            setCurrentSongIndex={setCurrentSongIndex}
-            songs={chill}
-          />
-        ) : moodMode === 'jazzy' ? (
-          <Player
-            currentSongIndex={currentSongIndex}
-            setCurrentSongIndex={setCurrentSongIndex}
-            songs={jazzy}
-          />
-        ) : (
-          <Player
-            currentSongIndex={currentSongIndex}
-            setCurrentSongIndex={setCurrentSongIndex}
-            songs={sleep}
-          />
-        )}
-      </div>
+  <div className='controller'>
+    <Player
+      currentSongIndex={currentSongIndex}
+      setCurrentSongIndex={setCurrentSongIndex}
+      songs={
+        moodMode === 'chill' ? chill :
+        moodMode === 'jazzy' ? jazzy : sleep
+      }
+    />
+    <div className='author'>
+      <span>
+        Song name: {
+          moodMode === 'chill' ? chill[currentSongIndex].name :
+          moodMode === 'jazzy' ? jazzy[currentSongIndex].name :
+          sleep[currentSongIndex].name
+        }
+      </span>
     </div>
+  </div>
+</div>
+
   );
 };
 

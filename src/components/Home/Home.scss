@@ -10,14 +10,20 @@
   transition: opacity 1s;
 }
 
-.videoOut {
-  z-index: 1;
-  object-fit: cover;
-  position: absolute;
+
+video {
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1s;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center center;
+  pointer-events: none;
 }
+
+.videoOut {
+  display: none !important;
+}
+
