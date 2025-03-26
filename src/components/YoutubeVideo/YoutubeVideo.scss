@@ -1,12 +1,14 @@
 .youtube-wrapper {
   position: absolute;
+   min-width:145px;
+  min-height: 40px;
   cursor: move;
   top: 20px;
   right: 20px;
   background: rgba(164, 155, 128, 0.7);
   padding: 8px;
   border-radius: 35px;
-  z-index: 999;
+   z-index: 999;
   color: rgb(255, 255, 255);
 }
 
@@ -73,4 +75,56 @@
 .youtube-player button:hover {
   background-color: #ffffffee;
 }
+
+.youtube-toggle-global {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ffae00;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 6px 10px;
+  font-size: 14px;
+  z-index: 1000;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.youtube-hide-btn {
+  position: absolute;
+  top: 3px;
+  right:12px;
+  background-color: #fcbb2d;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.youtube-hide-btn:hover {
+  background-color: #ffa500;
+}
+.youtube-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.youtube-title {
+  font-weight: bold;
+  color: white;
+  font-size: 14px;
+}
+
+
 
