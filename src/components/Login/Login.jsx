@@ -16,7 +16,7 @@ const Login = () => {
 
   return (
     <div className='container'>
-      {user !== null && <Navigate to='home' />}
+      {user !== null && <Navigate to='/' />}
       <nav className='container__nav'>
         <Link to='/home'>
           <img src='/assets/icons/lofi-logo.gif' alt='' />
@@ -42,14 +42,10 @@ const Login = () => {
             <i className='fas fa-info'></i>
             <span>About us</span>
           </Link>
-          <Link to='/login'>
-            <i className='fas fa-sign-in-alt'></i>
-            <span>Log In</span>
-          </Link>
         </div>
       </nav>
       <section className='container__section'>
-        <h1>Welcome to the auto genrate lofi music</h1>
+        <h1>Welcome to the auto genrate lofi</h1>
         <h1>Login to explore the feature</h1>
         <div className='form'>
           <div className='icon' onClick={signInHandler}>
