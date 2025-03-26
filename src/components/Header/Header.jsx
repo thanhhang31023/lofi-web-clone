@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { signOutAPI, changeDayNight } from '../../redux/actions';
+import { changeDayNight } from '../../redux/actions';
 import './Header.scss';
 import { Link } from 'react-router-dom';
 import DarkLightSwitch from '../DarkLightSwitch/DarkLightSwitch';
@@ -15,9 +15,7 @@ const Header = () => {
   const { user } = data;
   const { mode } = daynight;
 
-  const signOutHandler = () => {
-    dispatch(signOutAPI());
-  };
+  
 
   const daynightHandler = () => {
     dispatch(changeDayNight(mode));
@@ -48,10 +46,7 @@ const Header = () => {
         <img src='/assets/icons/lofi-logo.gif' alt='' />
       </Link>
       <div className='nav-menu'>
-        <Link to='/about'>
-          <i className='fas fa-info'></i>
-          <span>How it works</span>
-        </Link>
+  
         <a
           target='_blank'
           rel='noreferrer'
@@ -75,17 +70,7 @@ const Header = () => {
           {user && user.photoURL && <img src={user.photoURL} alt='' />}
           {user && user.displayName && <span>{user.displayName}</span>}
         </Link>
-        {user ? (
-          <Link to='/' onClick={signOutHandler}>
-            <i className='fas fa-sign-out-alt'></i>
-            <span>Log Out</span>
-          </Link>
-        ) : (
-          <Link to='/login'>
-            <i className='fas fa-sign-in-alt'></i>
-            <span>Log In</span>
-          </Link>
-        )}
+        
       </div>
     </nav>
   );
