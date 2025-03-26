@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import './YoutubeVideo.scss';
 import ReactPlayer from 'react-player';
+import Draggable from 'react-draggable';
+
 
 const YoutubeVideo = () => {
   const [youtubeLink, setYoutubeLink] = useState('');
@@ -17,32 +19,40 @@ const YoutubeVideo = () => {
   };
 
   return (
-    <div className='youtube'>
-      {submited && (
-        <div className='player'>
-          <ReactPlayer
-            width={'200px'}
-            height={'100px'}
-            loop={true}
-            controls={true}
-            url={youtubeLink}
-          />
-          <button onClick={() => setSubmited(false)}>
-            Choose another video
-          </button>
+    <Draggable>
+      <div className="youtube-wrapper">
+        <button className="youtube-toggle" onClick={() => setSubmited(false)}>
+          🎵 Your Music
+        </button>
+  
+        {!submited && (
+          <form onSubmit={submitYoutubeHandlder} className="youtube-form">
+            <input
+              value={youtubeLink}
+              onChange={changeYoutubeHandlder}
+              placeholder="Paste Youtube Music URL..."
+            />
+            <button type="submit">Play</button>
+          </form>
+        )}
+  
+        {submited && (
+          <div className="youtube-player">
+          <div className="player-wrapper">
+            <ReactPlayer
+              width="100%"
+              height="100%"
+              loop
+              controls
+              url={youtubeLink}
+            />
+          </div>
+          <button onClick={() => setSubmited(false)}>Change video</button>
         </div>
-      )}
-      {!submited && (
-        <form onSubmit={submitYoutubeHandlder} className='input'>
-          <input
-            value={youtubeLink}
-            onChange={changeYoutubeHandlder}
-            placeholder='Youtube Music URL'
-          />
-          <button type='submit'>Submit</button>
-        </form>
-      )}
-    </div>
+        
+        )}
+      </div>
+    </Draggable>
   );
 };
 

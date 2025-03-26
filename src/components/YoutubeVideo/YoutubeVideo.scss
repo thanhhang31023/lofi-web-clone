@@ -1,24 +1,76 @@
-.youtube {
+.youtube-wrapper {
   position: absolute;
-  bottom: 40%;
-  left: 1%;
-  z-index: 100;
+  cursor: move;
+  top: 20px;
+  right: 20px;
+  background: rgba(164, 155, 128, 0.7);
+  padding: 8px;
+  border-radius: 35px;
+  z-index: 999;
+  color: rgb(255, 255, 255);
+}
 
-  button {
-    margin-top: 10px;
-    margin-left: 5px;
-    background: #14141d;
-    color: #4e5054;
+.youtube-form input {
+  padding: 6px;
+  border-radius: 25px;
+  border: none;
+  margin-right: 8px;
+  background-color: #e0dfd4;
+}
+
+.youtube-form button {
+  background-color: #e6ae37;
+  border: none;
+  border-radius: 25px;
+  padding: 6px 10px;
+  color: rgb(245, 238, 238);
+  cursor: pointer;
+}
+
+.youtube-toggle {
+  background: none;
+  border: none;
+  color: #f5f0dc;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 1px;
+}
+
+.youtube-player {
+  margin-top:1px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  
+}
+.player-wrapper {
+  width: 260px;
+  height: 146px; // tương ứng tỷ lệ 16:9
+  overflow: hidden;
+  border-radius: 20px; // bo tròn
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+  iframe {
     border: none;
-    border-radius: 5px;
-
-    &:hover {
-      color: white;
-    }
-  }
-
-  .player {
-    display: flex;
-    flex-direction: column;
+    border-radius: 16px; // áp dụng cho iframe nếu cần
   }
 }
+.youtube-player button {
+  font-size: 12px;
+  padding: 6px;
+  
+  border-radius: 15px; // ✅ bo tròn nút
+  border: none;
+  background-color: #ffffffcc; // trắng mờ
+  color: #333;
+  cursor: pointer;
+  margin-top: 1px;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.youtube-player button:hover {
+  background-color: #ffffffee;
+}
+
