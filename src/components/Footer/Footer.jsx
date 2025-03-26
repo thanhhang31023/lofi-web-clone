@@ -12,10 +12,10 @@ const Footer = () => {
 
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
 
-  return (
+  return (g
     <div className='footer'>
       <div className='author'>
-        {/* <span>Made by Phuc Le, inspired by Lofi.co</span> */}
+   
         {moodMode === 'chill' ? (
           <span>Song name: {chill[currentSongIndex].name}</span>
         ) : moodMode === 'jazzy' ? (
