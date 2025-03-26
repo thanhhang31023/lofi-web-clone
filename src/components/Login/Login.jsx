@@ -45,7 +45,7 @@ const Login = () => {
         </div>
       </nav>
       <section className='container__section'>
-        <h1>Welcome to the auto genrate lofi</h1>
+        <h1>Welcome to the auto genrate lofi music</h1>
         <h1>Login to explore the feature</h1>
         <div className='form'>
           <div className='icon' onClick={signInHandler}>
