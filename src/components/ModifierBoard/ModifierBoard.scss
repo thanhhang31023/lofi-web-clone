@@ -200,14 +200,17 @@
 }
 
 .modifier-toggle-button {
+  position: absolute; // hoặc fixed nếu bạn muốn nó luôn ở 1 chỗ
+  bottom: 20px;
+  right: 20px;
   width: 24px;
   height: 24px;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.4);
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+ margin-left: 50px;
+ text-align: center;
+
   font-size: 20px;
 }
 

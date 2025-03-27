@@ -67,8 +67,8 @@ $blue: #91ccc2;
 }
 .rain-wrapper {
   position: absolute;
-  top: 20px;
-  right: 40px;
+  top: 70%;
+  right: 10px;
   z-index: 1000; // đảm bảo nổi trên cùng
   cursor: grab;
 
@@ -87,8 +87,4 @@ $blue: #91ccc2;
     font-size: 24px;
   }
 
-  @media (max-width: 480px) {
-    top: 55%; // ⬅️ Điều chỉnh vị trí thấp hơn
-    right: 10px;
-  }
 }
