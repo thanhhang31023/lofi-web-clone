@@ -11,6 +11,8 @@ import { changeRainStatus } from "../../redux/actions";
 import { changeVolume } from "../../redux/actions";
 import CountDownTimer from "../CountDownTimer/CountDownTimer";
 import TodoList from "../TodoList/TodoList";
+import Draggable from "react-draggable"; // 💡 thêm dòng này
+
 
 const ModifierBoard = ({
     seconds,
@@ -28,6 +30,8 @@ const ModifierBoard = ({
     const data = useSelector((state) => state.moodState);
     const rainData = useSelector((state) => state.rainState);
     const volumeData = useSelector((state) => state.volumeState);
+    const [isModifierVisible, setModifierVisible] = useState(true);
+
 
     const { rainValue } = rainData;
     const { moodMode } = data;
@@ -104,11 +108,21 @@ const ModifierBoard = ({
                     />
                 </div>
             )}
-            <div className={`modifier ` + (openMood && "mood ") + (openFocus && " focus ")}>
-                <div className="modifier__icon">
-                    <div className={`icon ` + (openMood && "active")}>
-                        <i onClick={openMoodHandler} className="fas fa-sliders-h fa-2x"></i>
-                    </div>
+            <Draggable>
+            <div className="modifier-wrapper">
+                {isModifierVisible ? (
+                    <div className={`modifier ` + (openMood && "mood ") + (openFocus && " focus ")}>
+                        <div className="modifier__icon">
+                            <div className={`icon ` + (openMood && "active")}>
+                                <i onClick={openMoodHandler} className="fas fa-sliders-h fa-2x"></i>
+                            </div>
+                            <div className={"icon " + (openFocus && "active")}>
+                                <i onClick={openFocusHandler} className="fas fa-book-reader fa-2x"></i>
+                            </div>
+                            <div className="icon toggle" onClick={() => setModifierVisible(false)}>
+                                <i className="fas fa-minus"></i>
+                            </div>
+                        </div>
                     {openMood && (
                         <div className="modifierBox">
                             <h4>Mood</h4>
@@ -302,12 +316,7 @@ const ModifierBoard = ({
                             </div>
                         </div>
                     )}
-                </div>
-                <div className="modifier__icon">
-                    <div className={"icon " + (openFocus && "active")}>
-                        <i onClick={openFocusHandler} className="fas fa-book-reader fa-2x"></i>
-                    </div>
-                </div>
+              
                 {openFocus && (
                     <div className="modifierBox">
                         <h4>Focus Mode</h4>
@@ -328,6 +337,13 @@ const ModifierBoard = ({
                     </div>
                 )}
             </div>
+        ) : (
+            <div className="modifier-toggle-button" onClick={() => setModifierVisible(true)}>
+                <i className="fas fa-plus"></i>
+            </div>
+        )}
+    </div>
+</Draggable>
         </>
     );
 };

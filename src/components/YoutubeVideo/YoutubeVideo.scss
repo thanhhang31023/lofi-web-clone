@@ -3,13 +3,20 @@
    min-width:145px;
   min-height: 40px;
   cursor: move;
-  top: 70px;
+  top: 90px;
   right: 10px;
   background: rgba(164, 155, 128, 0.7);
   padding: 8px;
   border-radius: 35px;
    z-index: 999;
   color: rgb(255, 255, 255);
+
+  @media (max-width: 768px) {
+    top:10%; // ⬅️ Điều chỉnh vị trí thấp hơn
+  
+  }
+
+
 }
 
 .youtube-form input {
