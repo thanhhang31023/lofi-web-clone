@@ -58,3 +58,63 @@
   margin: 10px 0;
 }
 
+.countdown .countdownNotRun .input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.countdown .countdownNotRun .input input {
+  width: 60px;
+  padding: 6px;
+  text-align: center;
+ 
+}
+
+.countdown .countdownNotRun .input span {
+  margin-right: -10px;
+  font-size: 14px;
+}
+@media (max-width: 768px) {
+  .countdown .countdownNotRun .input {
+    gap: 5px;
+  
+  }
+
+  .countdown .countdownNotRun .input input {
+   max-width: 50px;
+  }
+
+  .buttonTimer.setup {
+    font-size: 14px;
+    padding: 6px 10px;
+    margin-right: -30px;
+  }
+}
+
+@media (max-width: 450px) {
+  .countdown .countdownNotRun .input {
+    gap: 0px;
+
+  
+  }
+
+  .buttonTimer.setup {
+    font-size: 14px;
+    padding: 6px;
+ 
+  }
+}
+@media (max-width: 480px) {
+  .modifierBox {
+    max-width: 70vw;
+        padding: 6px;
+    font-size: 14px;
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+
+ 
+}

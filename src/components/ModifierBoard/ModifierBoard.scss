@@ -131,3 +131,58 @@
     justify-content: space-between;
   }
 }
+
+
+@media (max-width: 768px) {
+  .modifierBox {
+    position: fixed;
+  top: 0px;
+  left: -100px;
+    transform: translateX(-70%);
+    max-width: 40vh;
+    max-height: 50vh;
+    overflow-y: auto;
+    z-index: 1001;
+    background-color: rgba(0, 0, 0, 0.6); // hoặc bạn đang dùng biến màu sẵn
+    border-radius: 12px;
+  
+    color: white;
+  }
+
+ 
+
+
+
+  .volume-slider,
+  .slider {
+    width: 100%;
+  }
+
+  .countdown {
+    padding: 0 10px;
+    width: 100%;
+  }
+
+  .countdown .input {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .todoList {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modifierBox {
+    //width: 95vw;
+  
+   
+    padding: 12px;
+    font-size: 14px;
+    max-height: 40vh;
+    overflow-y: auto;
+  }
+}

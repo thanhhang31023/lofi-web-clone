@@ -13,3 +13,61 @@
 .todolistList::-webkit-scrollbar {
   display: none;
 }
+
+@media (max-width: 768px) {
+  .todoList {
+   padding: 0 10px;
+
+    max-height: 50vh;
+     overflow-y: auto;
+   
+  }
+ 
+ }
+ @media (max-width: 480px) {
+  .todoList {
+    padding: 0 1px;
+  }
+
+   .todoList input,
+  .todoList button {
+    width: 100%;
+    margin-top: -5px;
+    margin-left: 0;
+  }
+
+  .todolistList {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+
+  
+  .todolistList .row {
+    align-items: center;
+  }
+
+  .todolistList .col {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4px;
+  }
+
+  .todolistList .col:nth-child(1) {
+    justify-content: flex-start;
+    flex: 1;
+    font-size: 14px;
+  }
+
+  .todolistList .col:nth-child(2),
+  .todolistList .col:nth-child(3) {
+    max-width: 40px;
+    padding: 0;
+  }
+
+  .todolistList .btn {
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+}
+
+
