@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import './YoutubeVideo.scss';
 import ReactPlayer from 'react-player';
 import Draggable from 'react-draggable';
+import { useSelector } from 'react-redux'; // 🆕 thêm
+
 
 
 const YoutubeVideo = () => {
@@ -10,6 +12,7 @@ const YoutubeVideo = () => {
   const [submited, setSubmited] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [isHidden, setIsHidden] = useState(false);
+  const mode = useSelector((state) => state.modeState.mode); // 'day' hoặc 'night'
 
 
 
@@ -27,8 +30,10 @@ const YoutubeVideo = () => {
  
 
   {isVisible && (
-    <Draggable>
-    <div className="youtube-wrapper">
+  <Draggable handle=".youtube-header" cancel=".youtube-hide-btn, .youtube-form button">
+  <div className={`youtube-wrapper ${mode}`}>
+
+
       <div className="youtube-header">
         <span className="youtube-title">🎵 Your Music</span>
         <button

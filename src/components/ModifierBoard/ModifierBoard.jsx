@@ -30,7 +30,7 @@ const ModifierBoard = ({
     const data = useSelector((state) => state.moodState);
     const rainData = useSelector((state) => state.rainState);
     const volumeData = useSelector((state) => state.volumeState);
-    const [isModifierVisible, setModifierVisible] = useState(true);
+  
 
 
     const { rainValue } = rainData;
@@ -76,8 +76,7 @@ const ModifierBoard = ({
     };
 
     const changeVolumeHandler = (e) => {
-        dispatch(changeVolume(e.target.value));
-    };
+        dispatch(changeVolume(e.target.value));    };
 
     return (
         <>
@@ -108,9 +107,10 @@ const ModifierBoard = ({
                     />
                 </div>
             )}
-            <Draggable>
-            <div className="modifier-wrapper">
-                {isModifierVisible ? (
+           <Draggable handle=".modifier__icon" cancel=".icon, .modifier-toggle-button">
+  <div className="modifier-wrapper">
+
+              
                     <div className={`modifier ` + (openMood && "mood ") + (openFocus && " focus ")}>
                         <div className="modifier__icon">
                             <div className={`icon ` + (openMood && "active")}>
@@ -119,9 +119,7 @@ const ModifierBoard = ({
                             <div className={"icon " + (openFocus && "active")}>
                                 <i onClick={openFocusHandler} className="fas fa-book-reader fa-2x"></i>
                             </div>
-                            <div className="icon toggle" onClick={() => setModifierVisible(false)}>
-                                <i className="fas fa-minus"></i>
-                            </div>
+                            
                         </div>
                     {openMood && (
                         <div className="modifierBox">
@@ -337,11 +335,7 @@ const ModifierBoard = ({
                     </div>
                 )}
             </div>
-        ) : (
-            <div className="modifier-toggle-button" onClick={() => setModifierVisible(true)}>
-                <i className="fas fa-plus"></i>
-            </div>
-        )}
+        
     </div>
 </Draggable>
         </>

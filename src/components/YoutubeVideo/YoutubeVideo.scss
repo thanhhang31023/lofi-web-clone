@@ -3,18 +3,27 @@
    min-width:145px;
   min-height: 40px;
   cursor: move;
-  top: 90px;
-  right: 10px;
-  background: rgba(164, 155, 128, 0.7);
-  padding: 8px;
+  top:4%; // ⬅️ Điều chỉnh vị trí thấp hơn
+    right: 1%;
+  
+  background: rgba(161, 157, 143, 0.437);
+  padding: 10px;
   border-radius: 35px;
    z-index: 999;
-  color: rgb(255, 255, 255);
+
 
   @media (max-width: 768px) {
     top:10%; // ⬅️ Điều chỉnh vị trí thấp hơn
-  
+    right: 2%;
   }
+
+
+
+@media (max-width: 480px) {
+  top:8%; // ⬅️ Điều chỉnh vị trí thấp hơn
+  right: 1%;
+
+}
 
 
 }
@@ -24,7 +33,7 @@
   border-radius: 25px;
   border: none;
   margin-right: 8px;
-  background-color: #e0dfd4;
+  background-color: #e0dfd4c9;
 }
 
 .youtube-form button {
@@ -39,7 +48,8 @@
 .youtube-toggle {
   background: none;
   border: none;
-  color: #f5f0dc;
+  padding: 10px;
+
   font-size: 16px;
   cursor: pointer;
   margin-bottom: 1px;
@@ -66,7 +76,7 @@
 }
 .youtube-player button {
   font-size: 12px;
-  padding: 6px;
+  padding: 10px;
   
   border-radius: 15px; // ✅ bo tròn nút
   border: none;
@@ -88,7 +98,7 @@
   top: 20px;
   right: 20px;
   background-color: #ffae00;
-  color: white;
+
   border: none;
   border-radius: 10px;
   padding: 6px 10px;
@@ -100,22 +110,28 @@
 
 .youtube-hide-btn {
   position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+
   top: -5px;
   right:1px;
+ 
 
   background-color: #fcbb2d;
-  color: white;
+  color: rgb(255, 255, 255);
   border: none;
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  font-size: 16px;
-  line-height: 22px;
-  text-align: center;
+  width: 35px;
+  height: 35px;
+  
+ 
+  
   cursor: pointer;
   font-weight: bold;
-  z-index: 10;
   transition: all 0.2s ease;
+  padding: 12px;
 }
 
 .youtube-hide-btn:hover {
@@ -130,9 +146,20 @@
 
 .youtube-title {
   font-weight: bold;
-  color: white;
+  color: rgba(255, 255, 255, 0.845);
   font-size: 14px;
 }
 
+
+/* Theme tối */
+.youtube-wrapper.night {
+  
+  .youtube-hide-btn,
+  .youtube-form button {
+ 
+    background-color: #04013d8d;
+    color: white;
+  }
+}
 
 

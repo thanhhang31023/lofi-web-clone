@@ -20,8 +20,8 @@ const RainToggleButton = () => {
   };
 
   return (
-    <Draggable>
-    <div className='rain-wrapper'>
+    <Draggable cancel=".button">
+  <div className='rain-wrapper'>
       {buttonClick && (
         <ReactAudioPlayer
           preload='auto'
